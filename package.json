@@ -41,6 +41,7 @@
     "@titaniumnetwork-dev/ultraviolet": "^3.2.10",
     "axios": "^1.13.2",
     "chii": "^1.15.5",
+    "dotenv-flow": "^4.1.0",
     "fastify": "^5.6.1",
     "pm2": "^6.0.13",
     "puppeteer": "^24.29.1",
