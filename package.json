@@ -8,10 +8,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "preinstall": "npm install testcafe-hammerhead@24.6.16",
+    "postinstall": "npm run build && cd lib/rammerhead && npm install testcafe-hammerhead@24.6.16",
     "build": "node run-command.mjs build && cd lib/rammerhead && npm run build",
     "start": "node backend.js",
-    "postinstall": "npm run build",
     "test": "npm run proxy-validator",
     "proxy-validator": "node proxyServiceValidator.js",
     "clean": "node run-command.mjs clean format"
