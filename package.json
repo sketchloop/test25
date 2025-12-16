@@ -1,27 +1,19 @@
 {
   "name": "holyunblocker",
-  "version": "6.9.4",
+  "version": "6.9.6",
   "repository": "https://github.com/QuiteAFancyEmerald/Holy-Unblocker",
   "description": "Holy Unblocker LTS is a web proxy service that helps you access websites that may be blocked by your network, government or policy all within your browser with no download or setup.",
   "main": "backend.js",
   "engines": {
-    "node": "20.x"
+    "node": ">=20"
   },
   "scripts": {
-    "fresh-install": "npm cache verify && npm update && npm ci && cd lib/rammerhead && npm ci",
-    "fresh-start": "npm run fresh-install && npm start",
-    "start": "npm stop && npm run build && npm run manual-start",
-    "restart": "node run-command.mjs stop start",
-    "stop": "node run-command.mjs stop",
-    "test": "npm run proxy-validator",
-    "manual-start": "node run-command.mjs start",
-    "kill": "node run-command.mjs stop kill",
     "build": "node run-command.mjs build && cd lib/rammerhead && npm run build",
-    "clear": "node run-command.mjs clean",
-    "clean": "node run-command.mjs clean format",
+    "start": "node backend.js",
+    "postinstall": "npm run build",
+    "test": "npm run proxy-validator",
     "proxy-validator": "node proxyServiceValidator.js",
-    "workflow-test": "node run-command.mjs workflow",
-    "deployment": "npm install && npm run build && node backend.js"
+    "clean": "node run-command.mjs clean format"
   },
   "keywords": [
     "proxy",
@@ -46,7 +38,8 @@
     "pm2": "^6.0.13",
     "puppeteer": "^24.29.1",
     "utf-8-validate": "^6.0.5",
-    "ws": "^8.18.3"
+    "ws": "^8.18.3",
+    "testcafe-hammerhead": "24.6.16"
   },
   "devDependencies": {
     "@babel/node": "^7.28.0",
